@@ -1,4 +1,4 @@
-# deepface
+# deepface-noavx
 
 Fork from https://github.com/serengil/deepface
 
