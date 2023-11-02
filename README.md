@@ -62,6 +62,8 @@ This function verifies face pairs as same person or different persons. It expect
 
 ```python
 result = DeepFace.verify(img1_path = "img1.jpg", img2_path = "img2.jpg")
+# or
+result = DeepFace.verify(img1_path = "data:image/jpg;base64,/9j/4AA...", img2_path = "data:/jpeg;base64,/9j/4AA...")
 ```
 
 <p align="center"><img src="https://raw.githubusercontent.com/serengil/deepface/master/icon/stock-1.jpg" width="95%" height="95%"></p>
@@ -289,6 +291,18 @@ cd scripts
 <p align="center"><img src="https://raw.githubusercontent.com/serengil/deepface/master/icon/deepface-api.jpg" width="90%" height="90%"></p>
 
 Face recognition, facial attribute analysis and vector representation functions are covered in the API. You are expected to call these functions as http post methods. Default service endpoints will be `http://localhost:5000/verify` for face recognition, `http://localhost:5000/analyze` for facial attribute analysis, and `http://localhost:5000/represent` for vector representation. You can pass input images as exact image paths on your environment, base64 encoded strings or images on web. [Here](https://github.com/serengil/deepface/tree/master/api), you can find a postman project to find out how these methods should be called.
+
+Example: for 'verify'
+```JSON
+{
+  "img1_path": "data:/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...",
+  "img2_path": "https://images.pexels.com/photos/...",
+  "model_name": "VGG-Face",
+  "detector_backend": "retinaface",
+  "distance_metric": "cosine"
+}
+```
+Remember to set 'Content-type' header to 'application/json'.
 
 **Dockerized Service**
 
