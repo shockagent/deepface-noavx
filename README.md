@@ -25,7 +25,7 @@ cd scripts
 
 Face recognition, facial attribute analysis and vector representation functions are covered in the API. You are expected to call these functions as http post methods. Default service endpoints will be `http://localhost:5000/verify` for face recognition, `http://localhost:5000/analyze` for facial attribute analysis, and `http://localhost:5000/represent` for vector representation. You can pass input images as exact image paths on your environment, base64 encoded strings or images on web. [Here](https://github.com/serengil/deepface/tree/master/api), you can find a postman project to find out how these methods should be called.
 
-Example: for 'verify'
+Example for 'verify': just send a similar body
 ```JSON
 {
   "img1_path": "data:/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...",
