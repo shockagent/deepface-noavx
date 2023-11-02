@@ -26,7 +26,7 @@ RUN apt-get update && \
 # -----------------------------------
 # install deepface from source code (always up-to-date)
 #RUN pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host=files.pythonhosted.org -e .
-RUN pip install --upgrade pip && wget $TF_URL$TF_PKG && pip install deepface Deprecated
+RUN pip install --upgrade pip && wget $TF_URL && pip install $(basename $TF_URL) deepface Deprecated
 # -----------------------------------
 # some packages are optional in deepface. activate if your task depends on one.
 # RUN pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host=files.pythonhosted.org cmake==3.24.1.1
